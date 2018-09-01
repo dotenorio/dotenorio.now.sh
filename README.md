@@ -4,7 +4,8 @@ Access this API on http://dotenorio.now.sh/
 
 Or consume this with NodeJS
 
-```const request = require('request')
+```
+const request = require('request')
 
 request({
   uri: 'https://dotenorio.now.sh/',
@@ -20,7 +21,12 @@ request({
   console.log(JSON.stringify(body, null, 2))
 
   // or use your creativity
-  console.log(`\r\nHello i'm ${body.name} and you can talk to me on Telegram (${body.telegram}) or see my codes on GitHub (${body.github}). See you!`)
+  console.log(`
+    Hello i'm ${body.name}
+    and you can talk to me on Telegram (${body.telegram})
+    or see my codes on GitHub (${body.github}).
+    See you!
+  `)
 })
 ```
 
