@@ -1,0 +1,30 @@
+{
+  "scripts": {
+    "start": "micro"
+  },
+  "dependencies": {
+    "dotenorio": "^1.1.1",
+    "micro": "latest"
+  },
+  "name": "dotenorio.now.sh",
+  "description": "http://dotenorio.now.sh/",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dotenorio/dotenorio.now.sh.git"
+  },
+  "keywords": [
+    "dotenorio",
+    "now",
+    "sh",
+    "api"
+  ],
+  "author": "Fernando M Tenório",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dotenorio/dotenorio.now.sh/issues"
+  },
+  "homepage": "https://github.com/dotenorio/dotenorio.now.sh#readme"
+}
