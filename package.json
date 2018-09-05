@@ -4,7 +4,7 @@
     "lint": "standard"
   },
   "dependencies": {
-    "dotenorio": "^1.1.1",
+    "dotenorio": "^1.1.2",
     "is-url": "^1.2.4",
     "micro": "latest",
     "micro-redirect": "^1.0.0",
