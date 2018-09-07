@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>dotenorio.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      text-align: center;
+    }
+    a {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <img id="picture" src="" alt="picture">
+  <h1 id="name"></h1>
+  <p id="bio"></p>
+  <a href="#" id="github"></a>
+  <a href="#" id="twitter"></a>
+  <a href="#" id="linkedin"></a>
+  <a href="#" id="facebook"></a>
+  <a href="#" id="telegram"></a>
+  <a href="#" id="blog"></a>
+  <a href="#" id="email"></a>
+
+  <script>
+    var setLink = function (response, key) {
+      var element = document.getElementById(key)
+      var link = response[key]
+      if (link) {
+        element.innerHTML = link
+        if (key === 'email') {
+          element.setAttribute('href', 'mailto:' + link)
+        } else {
+          element.setAttribute('href', link)
+        }
+      } else {
+        element.style.display = 'none'
+      }
+    }
+
+    var xhttp = new XMLHttpRequest()
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        var response = JSON.parse(this.responseText)
+        document.title = response.name + ' | ' + document.title
+        document.getElementById('name').innerHTML = response.name
+        document.getElementById('picture').setAttribute('src', response.picture)
+        document.getElementById('bio').innerHTML = response.bio
+
+        setLink(response, 'github')
+        setLink(response, 'twitter')
+        setLink(response, 'linkedin')
+        setLink(response, 'facebook')
+        setLink(response, 'telegram')
+        setLink(response, 'email')
+        setLink(response, 'blog')
+      }
+    }
+    xhttp.open("GET", "/api", true)
+    xhttp.send()
+  </script>
+</body>
+
+</html>
