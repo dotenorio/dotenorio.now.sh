@@ -1,14 +1,27 @@
 # Hello ▲
 
-Access this API on http://dotenorio.now.sh/
+Access this API on https://dotenorio.com/api
 
-Or consume this with NodeJS
+Or access a key directly
+
+```
+GET https://dotenorio.com/:key
+
+GET https://dotenorio.com/name // returns 'Fernando M Tenório'
+GET https://dotenorio.com/picture // redirect 302 to my awesome face :)
+GET https://dotenorio.com/github // redirect 302 to 'https://github.com/dotenorio'
+[...]
+```
+
+and so on..
+
+Or yet consume this with NodeJS
 
 ```
 const request = require('request')
 
 request({
-  uri: 'https://dotenorio.now.sh/',
+  uri: 'https://dotenorio.com/api',
   method: 'get',
   json: {}
 }, (err, res, body) => {
