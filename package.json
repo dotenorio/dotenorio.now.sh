@@ -1,7 +1,10 @@
 {
   "scripts": {
     "start": "micro",
-    "lint": "standard"
+    "lint": "standard",
+    "deploy": "now --public",
+    "alias": "now alias dotenorio.com",
+    "rm-safe": "now rm dotenorio.now.sh --safe --yes"
   },
   "dependencies": {
     "dotenorio": "latest",
