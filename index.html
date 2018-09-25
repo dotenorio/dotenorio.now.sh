@@ -6,20 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>dotenorio.com</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      text-align: center;
-    }
-    a {
-      display: block;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
 <body>
-  <img id="picture" src="" alt="picture">
-  <h1 id="name"></h1>
-  <p id="bio"></p>
+  <div class="top">
+    <img id="picture" src="" alt="picture">
+    <h1 id="name"></h1>
+    <p id="bio"></p>
+  </div>
   <a href="#" id="github"></a>
   <a href="#" id="twitter"></a>
   <a href="#" id="linkedin"></a>
@@ -32,13 +30,18 @@
     var setLink = function (response, key) {
       var element = document.getElementById(key)
       var link = response[key]
+      var icon = '<i class="fab fa-' + key + '"></i>'
       if (link) {
-        element.innerHTML = link
         if (key === 'email') {
+          icon = '<i class="fas fa-envelope"></i>'
           element.setAttribute('href', 'mailto:' + link)
         } else {
+          if (key === 'blog') {
+            icon = '<i class="fas fa-globe-americas"></i>'
+          }
           element.setAttribute('href', link)
         }
+        element.innerHTML = icon
       } else {
         element.style.display = 'none'
       }
@@ -51,6 +54,7 @@
         document.title = response.name + ' | ' + document.title
         document.getElementById('name').innerHTML = response.name
         document.getElementById('picture').setAttribute('src', response.picture)
+        document.head.insertAdjacentHTML('beforeend', '<link rel="icon" href="' + response.picture + '" type="image/x-icon">')
         document.getElementById('bio').innerHTML = response.bio
 
         setLink(response, 'github')

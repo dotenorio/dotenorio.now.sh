@@ -1,6 +1,7 @@
 const { send } = require('micro')
 const { router, get } = require('microrouter')
 const { readFileSync } = require('fs')
+const path = require('path')
 const redirect = require('micro-redirect')
 const dotenorio = require('dotenorio')()
 const isUrl = require('is-url')
@@ -9,7 +10,19 @@ const main = (req, res) => {
   res.setHeader('Content-Type', 'text/html; charset=utf-8')
   send(res, 200, readFileSync('index.html'))
 }
+
+const assets = (req, res) => {
+  const file = req.url
+  const ext = path.extname(file)
+  const contentTypes = {
+    '.css': 'text/css'
+  }
+  res.setHeader('Content-Type', `${contentTypes[ext]}; charset=utf-8`)
+  send(res, 200, readFileSync(path.join(__dirname, file)))
+}
+
 const api = (req, res) => send(res, 200, dotenorio)
+
 const data = (req, res) => {
   let key = req.params.key
   let value = dotenorio[key]
@@ -25,10 +38,12 @@ const data = (req, res) => {
   res.setHeader('Content-Type', 'text/plain; charset=utf-8')
   send(res, 200, value)
 }
+
 const notfound = (req, res) => send(res, 404, 'Sorry, this route not exists.')
 
 module.exports = router(
   get('/', main),
+  get('/assets/*', assets),
   get('/api', api),
   get('/:key', data),
   get('/*', notfound)
