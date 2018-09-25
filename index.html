@@ -35,11 +35,13 @@
         if (key === 'email') {
           icon = '<i class="fas fa-envelope"></i>'
           element.setAttribute('href', 'mailto:' + link)
+          element.setAttribute('title', 'mailto:' + link)
         } else {
           if (key === 'blog') {
             icon = '<i class="fas fa-globe-americas"></i>'
           }
           element.setAttribute('href', link)
+          element.setAttribute('title', link)
         }
         element.innerHTML = icon
       } else {
