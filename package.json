@@ -7,9 +7,9 @@
     "rm-safe": "now rm dotenorio.now.sh --safe --yes"
   },
   "dependencies": {
-    "dotenorio": "latest",
+    "dotenorio": "1.1.4",
     "is-url": "^1.2.4",
-    "micro": "latest",
+    "micro": "^9.3.4",
     "micro-redirect": "^1.0.0",
     "microrouter": "^3.1.3"
   },
