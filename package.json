@@ -4,7 +4,7 @@
     "lint": "standard",
     "deploy": "now --public",
     "alias": "now alias dotenorio.com",
-    "rm-safe": "now rm dotenorio.now.sh --safe --yes"
+    "rm-safe": "now rm dotenorio.com --safe --yes"
   },
   "dependencies": {
     "dotenorio": "^1.1.5",
