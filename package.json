@@ -7,7 +7,7 @@
     "rm-safe": "now rm dotenorio.com --safe --yes"
   },
   "dependencies": {
-    "dotenorio": "^1.1.6",
+    "dotenorio": "^1.1.7",
     "is-url": "^1.2.4",
     "micro": "^9.3.4",
     "micro-redirect": "^1.0.0",

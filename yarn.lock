@@ -261,10 +261,10 @@ doctrine@^2.1.0:
   dependencies:
     esutils "^2.0.2"
 
-dotenorio@^1.1.6:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/dotenorio/-/dotenorio-1.1.6.tgz#c84ad9f2718a762ace2f7852c3de3002e3969f1d"
-  integrity sha512-8nqEYHIR3MJqv/LALZbTajkTSv7IV+3hn/e3kAgG6mH9xKU8RqbRrCw86Sx+ayuAkXQq7tAr+ZwcVbxdm388YA==
+dotenorio@^1.1.7:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/dotenorio/-/dotenorio-1.1.7.tgz#35a981293071b4b04f59a50ce2e192ecc8839ca7"
+  integrity sha512-CTc6o5nPsaOVya5mg7SG8SaF5EL2GELLD1YBowFRfTMd8FyHIcVgJdyxo+roaLSM6lm0wXhiVF8NmyUi/s5f8w==
 
 error-ex@^1.2.0, error-ex@^1.3.1:
   version "1.3.2"
