@@ -1,7 +1,7 @@
 body {
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
-  color: #FFF;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
   margin-bottom: 35px;
 }
 
@@ -22,7 +22,7 @@ a {
   border-radius: 50%;
   display: inline-block;
   margin-bottom: 25px;
-  box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.3);
   width: auto;
 }
 
@@ -35,6 +35,7 @@ a {
   font-size: 0.9em;
   width: 90%;
   margin: 0 auto;
+  line-height: 2em;
 }
 
 @media (min-width: 1200px) {
