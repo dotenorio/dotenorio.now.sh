@@ -8,8 +8,8 @@ Or access a key directly
 GET https://dotenorio.com/:key
 
 GET https://dotenorio.com/name // returns 'Fernando M Tenório'
-GET https://dotenorio.com/picture // redirect 302 to my awesome face :)
-GET https://dotenorio.com/github // redirect 302 to 'https://github.com/dotenorio'
+GET https://dotenorio.com/picture // redirect to my awesome face :)
+GET https://dotenorio.com/github // redirect to 'https://github.com/dotenorio'
 [...]
 ```
 

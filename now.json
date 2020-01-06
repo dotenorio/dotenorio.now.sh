@@ -1,5 +1,16 @@
 {
-  "version": 1,
+  "name": "dotenorio",
+  "version": 2,
   "public": true,
-  "alias": ["dotenorio.com"]
+  "builds": [
+    { "src": "*.html", "use": "@now/static" },
+    { "src": "assets/**/*.css", "use": "@now/static" },
+    { "src": "api/*.js", "use": "@now/node" }
+  ],
+  "routes": [
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/api", "dest": "api/dotenorio.js" },
+    { "src": "/(.*)", "dest": "api/key.js?key=$1" }
+  ]
 }

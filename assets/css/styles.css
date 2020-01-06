@@ -38,6 +38,10 @@ a {
   line-height: 1.5em;
 }
 
+.top #picture {
+  width: 300px;
+}
+
 @media (min-width: 1200px) {
   .top #bio {
     width: 50%;
@@ -50,5 +54,9 @@ a {
 @media (max-width: 480px) {
   .top #picture {
     width: 90%;
+  }
+  a {
+    width: calc(50% - 60px);
+    display: inline-block;
   }
 }
