@@ -1,14 +1,14 @@
 {
   "name": "dotenorio.com",
   "description": "http://dotenorio.com/",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "scripts": {
-    "start": "now dev",
-    "deploy": "now --public",
-    "rm-safe": "now rm dotenorio.com --safe --yes"
+    "start": "vercel dev",
+    "deploy": "vercel --public",
+    "rm-safe": "vercel rm dotenorio.com --safe --yes"
   },
   "dependencies": {
-    "dotenorio": "^1.1.10",
+    "dotenorio": "^1.1.11",
     "is-url": "^1.2.4"
   },
   "repository": {
