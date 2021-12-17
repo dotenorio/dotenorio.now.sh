@@ -8,7 +8,7 @@
     "rm-safe": "vercel rm dotenorio.com --safe --yes"
   },
   "dependencies": {
-    "dotenorio": "^1.1.11",
+    "dotenorio": "^1.1.12",
     "is-url": "^1.2.4"
   },
   "repository": {
