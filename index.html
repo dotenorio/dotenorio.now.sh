@@ -40,8 +40,6 @@
           <li><a class="sticker pink" href="https://www.linkedin.com/in/dotenorio" rel="me">LinkedIn</a></li>
           <li><a class="sticker blue" href="https://github.com/dotenorio" rel="me">GitHub</a></li>
           <li><a class="sticker green" href="mailto:dotenorio@gmail.com">dotenorio@gmail.com</a></li>
-          <li><a class="sticker white" href="https://telegram.me/dotenorio" rel="me">Telegram</a></li>
-          <li><a class="sticker white" href="https://twitter.com/dotenorio" rel="me">X</a></li>
           <li><a class="sticker white" href="https://www.facebook.com/dotenorio" rel="me">Facebook</a></li>
           <li><a class="sticker white" href="https://steamcommunity.com/id/dotenorio" rel="me">Steam</a></li>
         </ul>
@@ -65,10 +63,26 @@
         'Aqui somos uma família. Brincadeira.',
         'Para de me cutucar!'
       ];
+      var photos = [
+        { src: '/assets/img/fernando.webp', alt: 'Fernando de óculos e fones de ouvido, com cara de desconfiado' },
+        { src: '/assets/img/fernando-assustado.png', alt: 'Fernando de óculos, de olhos arregalados e bem perto da câmera' },
+        { src: '/assets/img/fernando-academia.webp', alt: 'Fernando de camisa verde na academia, com a testa franzida' },
+        { src: '/assets/img/fernando-serio.png', alt: 'Fernando de camiseta preta, sério, em frente a uma parede branca' }
+      ];
       var index = 0;
+      var photoIndex = 0;
       var bubble = document.getElementById('bubble');
+      var photo = document.querySelector('#poke img');
+      var preloadNext = function () {
+        new Image().src = photos[(photoIndex + 1) % photos.length].src;
+      };
+      preloadNext();
       document.getElementById('poke').addEventListener('click', function () {
         index = (index + 1) % lines.length;
+        photoIndex = (photoIndex + 1) % photos.length;
+        photo.src = photos[photoIndex].src;
+        photo.alt = photos[photoIndex].alt;
+        preloadNext();
         bubble.textContent = lines[index];
         bubble.classList.remove('pop');
         void bubble.offsetWidth;

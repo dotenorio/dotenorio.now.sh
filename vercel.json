@@ -3,8 +3,6 @@
   "redirects": [
     { "source": "/linkedin", "destination": "https://www.linkedin.com/in/dotenorio", "permanent": false },
     { "source": "/github", "destination": "https://github.com/dotenorio", "permanent": false },
-    { "source": "/telegram", "destination": "https://telegram.me/dotenorio", "permanent": false },
-    { "source": "/twitter", "destination": "https://twitter.com/dotenorio", "permanent": false },
     { "source": "/facebook", "destination": "https://www.facebook.com/dotenorio", "permanent": false },
     { "source": "/steam", "destination": "https://steamcommunity.com/id/dotenorio", "permanent": false }
   ],
