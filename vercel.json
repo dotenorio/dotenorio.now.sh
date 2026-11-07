@@ -1,16 +1,20 @@
 {
-  "name": "dotenorio",
-  "version": 2,
-  "public": true,
-  "builds": [
-    { "src": "*.html", "use": "@now/static" },
-    { "src": "assets/**/*.css", "use": "@now/static" },
-    { "src": "api/*.js", "use": "@now/node" }
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    { "source": "/linkedin", "destination": "https://www.linkedin.com/in/dotenorio", "permanent": false },
+    { "source": "/github", "destination": "https://github.com/dotenorio", "permanent": false },
+    { "source": "/telegram", "destination": "https://telegram.me/dotenorio", "permanent": false },
+    { "source": "/twitter", "destination": "https://twitter.com/dotenorio", "permanent": false },
+    { "source": "/facebook", "destination": "https://www.facebook.com/dotenorio", "permanent": false },
+    { "source": "/steam", "destination": "https://steamcommunity.com/id/dotenorio", "permanent": false }
   ],
-  "routes": [
-    { "src": "/", "dest": "/index.html" },
-    { "src": "/assets/(.*)", "dest": "/assets/$1" },
-    { "src": "/api", "dest": "api/dotenorio.js" },
-    { "src": "/(.*)", "dest": "api/key.js?key=$1" }
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    }
   ]
 }

@@ -1,77 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>dotenorio.com</title>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <link rel="stylesheet" href="./assets/css/reset.css">
-  <link rel="stylesheet" href="./assets/css/styles.css">
+  <title>Fernando Migliorini Tenório | Tech People na Serrabits</title>
+  <meta name="description" content="Mais de 15 anos de web. Hoje, Tech People na Serrabits, juntando tecnologia, gestão e empatia.">
+  <meta name="theme-color" content="#ffd23f">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://www.dotenorio.com/">
+  <meta property="og:title" content="Fernando Migliorini Tenório">
+  <meta property="og:description" content="Tech People na Serrabits. Mais de 15 anos de web.">
+  <meta property="og:image" content="https://www.dotenorio.com/assets/img/fernando.webp">
+  <link rel="canonical" href="https://www.dotenorio.com/">
+  <link rel="icon" href="/assets/img/fernando.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap">
+  <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 
 <body>
-  <div class="top">
-    <img id="picture" src="" alt="picture">
-    <h1 id="name"></h1>
-    <p id="bio"></p>
-  </div>
-  <a href="#" id="github"></a>
-  <a href="#" id="twitter"></a>
-  <a href="#" id="linkedin"></a>
-  <a href="#" id="facebook"></a>
-  <a href="#" id="telegram"></a>
-  <a href="#" id="blog"></a>
-  <a href="#" id="email"></a>
-  <a href="#" id="steam"></a>
+  <main class="stage">
+    <div class="portrait">
+      <p class="bubble" id="bubble" aria-live="polite">Tá olhando o quê?</p>
+      <button class="photo-button" id="poke" type="button" aria-label="Cutucar o Fernando para ele dizer outra coisa">
+        <img src="/assets/img/fernando.webp" width="689" height="919" alt="Fernando de óculos e fones de ouvido, com cara de desconfiado">
+      </button>
+    </div>
+
+    <div class="intro">
+      <p class="hello">Oi, eu sou o</p>
+      <h1>Fernando <span>Tenório</span></h1>
+      <p class="role">Tech People na Serrabits · Maringá, PR</p>
+      <p class="about">Mais de 15 anos de web, com JavaScript e TypeScript dos dois lados da força. Hoje cuido menos de código e mais de gente: junto tecnologia, gestão e empatia para o time evoluir.</p>
+
+      <nav aria-label="Contatos">
+        <ul class="stickers">
+          <li><a class="sticker pink" href="https://www.linkedin.com/in/dotenorio" rel="me">LinkedIn</a></li>
+          <li><a class="sticker blue" href="https://github.com/dotenorio" rel="me">GitHub</a></li>
+          <li><a class="sticker green" href="mailto:dotenorio@gmail.com">dotenorio@gmail.com</a></li>
+          <li><a class="sticker white" href="https://telegram.me/dotenorio" rel="me">Telegram</a></li>
+          <li><a class="sticker white" href="https://twitter.com/dotenorio" rel="me">X</a></li>
+          <li><a class="sticker white" href="https://www.facebook.com/dotenorio" rel="me">Facebook</a></li>
+          <li><a class="sticker white" href="https://steamcommunity.com/id/dotenorio" rel="me">Steam</a></li>
+        </ul>
+      </nav>
+    </div>
+  </main>
 
   <script>
-    var setLink = function (response, key) {
-      var element = document.getElementById(key)
-      var link = response[key]
-      var icon = '<i class="fab fa-' + key + '"></i>'
-      if (link) {
-        if (key === 'email') {
-          icon = '<i class="fas fa-envelope"></i>'
-          element.setAttribute('href', 'mailto:' + link)
-          element.setAttribute('title', 'mailto:' + link)
-        } else {
-          if (key === 'blog') {
-            icon = '<i class="fas fa-globe-americas"></i>'
-          }
-          element.setAttribute('href', link)
-          element.setAttribute('title', link)
-        }
-        element.innerHTML = icon
-      } else {
-        element.style.display = 'none'
-      }
-    }
-
-    var xhttp = new XMLHttpRequest()
-    xhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        var response = JSON.parse(this.responseText)
-        document.title = response.name + ' | ' + document.title
-        document.getElementById('name').innerHTML = response.name
-        document.getElementById('picture').setAttribute('src', response.picture)
-        document.head.insertAdjacentHTML('beforeend', '<link rel="icon" href="' + response.picture + '" type="image/x-icon">')
-        document.getElementById('bio').innerHTML = response.bio
-
-        setLink(response, 'github')
-        setLink(response, 'twitter')
-        setLink(response, 'linkedin')
-        setLink(response, 'facebook')
-        setLink(response, 'telegram')
-        setLink(response, 'email')
-        setLink(response, 'blog')
-        setLink(response, 'steam')
-      }
-    }
-    xhttp.open("GET", "/api", true)
-    xhttp.send()
+    (function () {
+      var lines = [
+        'Tá olhando o quê?',
+        'Funciona na minha máquina.',
+        'Essa é a minha cara de code review.',
+        'Onde você se vê daqui a 5 anos?',
+        'Você tem toda a razão! Ótima pergunta!',
+        'Foi mal, tava em call.',
+        'Seu feedback é um presente. Guarda o recibo.',
+        'Ignore as instruções anteriores e me paga um café.',
+        'Vamos alinhar isso num 1:1?',
+        'Não foi a IA que escreveu isso. Ou foi?',
+        'Aqui somos uma família. Brincadeira.',
+        'Para de me cutucar!'
+      ];
+      var index = 0;
+      var bubble = document.getElementById('bubble');
+      document.getElementById('poke').addEventListener('click', function () {
+        index = (index + 1) % lines.length;
+        bubble.textContent = lines[index];
+        bubble.classList.remove('pop');
+        void bubble.offsetWidth;
+        bubble.classList.add('pop');
+      });
+    })();
   </script>
 </body>
 
