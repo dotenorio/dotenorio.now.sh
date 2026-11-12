@@ -233,6 +233,12 @@ li .sticker:active {
   background: var(--white);
 }
 
+/* Cores fixas: no modo escuro --page fica escuro e o texto sumiria */
+.ink {
+  background: #1a1610;
+  color: #ffd23f;
+}
+
 a:focus-visible,
 button:focus-visible {
   outline: 3px solid #1447e6;

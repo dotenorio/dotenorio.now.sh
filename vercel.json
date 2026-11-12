@@ -1,6 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
+    { "source": "/sites", "destination": "https://sites.dotenorio.com", "permanent": false },
     { "source": "/linkedin", "destination": "https://www.linkedin.com/in/dotenorio", "permanent": false },
     { "source": "/github", "destination": "https://github.com/dotenorio", "permanent": false },
     { "source": "/facebook", "destination": "https://www.facebook.com/dotenorio", "permanent": false },
