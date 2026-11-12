@@ -233,10 +233,17 @@ li .sticker:active {
   background: var(--white);
 }
 
-/* Cores fixas: no modo escuro --page fica escuro e o texto sumiria */
+/* Destaque: preto no tema claro, amarelo no escuro */
 .ink {
   background: #1a1610;
   color: #ffd23f;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ink {
+    background: #ffd23f;
+    color: #1a1610;
+  }
 }
 
 a:focus-visible,
